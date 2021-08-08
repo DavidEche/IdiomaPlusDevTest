@@ -6,7 +6,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private InputActionReference movementControl;
     [SerializeField] private InputActionReference jumpController;
-    [SerializeField] private float playerSpeed = 2.0f;
+    [SerializeField] private float playerSpeed = 4.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float rotationSpeed = 4f;
