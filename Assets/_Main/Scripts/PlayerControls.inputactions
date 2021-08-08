@@ -22,9 +22,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "949100dc-80ad-4436-be2b-bb6dc0f5a08a",
+                    "name": "Attack",
+                    "type": "PassThrough",
+                    "id": "ee8631a9-8d0e-484e-8639-2529b60b87b4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -99,12 +99,12 @@
                 },
                 {
                     "name": "",
-                    "id": "e28d3b65-fd1e-4590-9681-82cf76944e6d",
-                    "path": "<Keyboard>/space",
+                    "id": "2f04ecab-f3bf-49aa-a6c2-ac3b6b36359a",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

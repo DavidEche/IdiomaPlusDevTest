@@ -41,4 +41,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage){
+        live -= damage;
+        if(live<=0){
+            Debug.Log("ME MORI");
+        }
+    }
+
 }
