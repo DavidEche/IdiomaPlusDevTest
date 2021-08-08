@@ -17,6 +17,7 @@ public class EnemyChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if(other.CompareTag("Player")){
+            Debug.Log("exitTrigger");
             isplayerInRange?.Invoke(false);
         }
     }

@@ -43,6 +43,7 @@ public class PatrolState : MonoBehaviour, IEnemyState
         positionSelected = SelectRandomPosition();
         navMeshAgent.SetDestination(positionSelected);
         waitEndMove = WaitEndMove();
+        navMeshAgent.isStopped = false;
         StartCoroutine(waitEndMove);
     }
 
