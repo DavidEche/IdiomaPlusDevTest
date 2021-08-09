@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int live;
+    [SerializeField] private Stats stats;
     [SerializeField] private EnemyChecker enemyChecker;
     [SerializeField] private IEnemyState[] enemyStates;
     [SerializeField] private IEnemyState currentState;
@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         for (var i = 0; i < enemyStates.Length; i++)
         {
             if(enemyStates[i].GetState() == newState){
+                currentState = enemyStates[i];
                 enemyStates[i].StartState();
                 break;
             }
@@ -42,9 +43,9 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
-        live -= damage;
-        if(live<=0){
-            Debug.Log("ME MORI");
+        stats.currentLive -= damage;
+        if(stats.currentLive<=0){
+            Debug.Log("Deaht");
         }
     }
 
