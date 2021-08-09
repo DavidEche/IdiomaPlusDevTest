@@ -19,18 +19,16 @@ public class SensorAttack : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if(triggerActivate && other.CompareTag(targetTag)){
             targets.Remove(other.gameObject);
-            Debug.Log(other);
+            Debug.Log("sale " +other);
         }
     }
 
     public void EndAttack(){
         triggerActivate = false;
         targets.Clear();
-        Debug.Log("EndAttack");
     }
 
     public void StartAttack(){
-        Debug.Log("startAttack");
         triggerActivate = true;
     }
 
