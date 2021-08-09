@@ -1,2 +1,6 @@
-# Idioma Plus Game Developer Test
-This repository is a base project for candidates to apply as Unity Game Developer in Idioma Plus.
+# Idioma Plus Game Developer Test David Echeverri
+##Puntos realizados
+Desarrollo de controlador de escenas.
+Controlador de personaje para la plataforma de Pc.
+Creación de un npc que patrulle, persiga y ataque al jugador.
+Agragar animaciones basicas al jugador.
