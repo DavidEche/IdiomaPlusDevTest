@@ -6,14 +6,16 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private InputActionReference movementControl;
     [SerializeField] private InputActionReference attackControl;
-    [SerializeField] private PlayerAnimatorController animatorController;   
-    [SerializeField] private Attack attack;   
+    [SerializeField] private CharacterController controller;
+    private PlayerAnimatorController animatorController;   
+    [SerializeField] private Attack attackPlayer;   
+
+    
     [SerializeField] private float playerSpeed = 4.0f;
     [SerializeField] private float jumpHeight = 1.0f;
     [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private float rotationSpeed = 4f;
     [SerializeField] private Transform cameraMainTranform;
-    [SerializeField] private CharacterController controller;
     [SerializeField] private bool canMove;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -26,6 +28,12 @@ public class PlayerMovementController : MonoBehaviour
     private void OnDisable() {        
         movementControl.action.Disable();
         attackControl.action.Disable();
+    }
+
+    public void Initialize(PlayerAnimatorController _animatorController, Attack _attackPlayer){
+        animatorController = _animatorController;
+        attackPlayer = _attackPlayer;
+        canMove = true;
     }
     void Update()
     {
@@ -57,7 +65,7 @@ public class PlayerMovementController : MonoBehaviour
                 canMove = false;
                 animatorController.MoveCharacter(false);
                 animatorController.PlayerAttack();
-                attack.StartAttack();
+                attackPlayer.StartAttack();
                 animatorController.endAttack += EndAttack;
             }
         }

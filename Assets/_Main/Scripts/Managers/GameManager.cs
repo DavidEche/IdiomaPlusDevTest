@@ -5,14 +5,15 @@ using UnityEngine;
 public class GameManager : ManagerBase
 {
     [SerializeField] private Transform defaultPlayerPosition;
-    [SerializeField] private PlayerStats player;
+    [SerializeField] private PlayerController player;
     [SerializeField] private Stats defaultStats;
     [SerializeField] private string sceneName;
 
 
     private void Start() {
-        player.InitializeStats(defaultStats);
+        player.Initialize(defaultStats);
         player.gameObject.transform.position = defaultPlayerPosition.position;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void BackToLobby(){

@@ -5,9 +5,12 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private string target;
-    GameObject[] holaquehace;
     [SerializeField] private SensorAttack attackSensor;
     [SerializeField] private PlayerAnimatorController animatorController;
+
+    public void Initialize(PlayerAnimatorController _animatorController){
+        animatorController = _animatorController;
+    }
 
     public void StartAttack(){
         attackSensor.StartAttack();
